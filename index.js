@@ -1,38 +1,20 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom';
-import { Viewer } from 'react-doc-viewer';
 
-class Titre extends React.Component {
-    render() {
-        return (
-          <h1>
-            Dernière consultation :
-          </h1>
-        );
-    }
+function App() {
+    return(
+        <div>
+            <h1>Dernière consultation</h1>
+            <iframe title="Title" src="https://docs.google.com/document/d/e/2PACX-1vS-vHhxho9yOo62SpJqHh6739a8ilWqKDs55btepnNVch6b1rp3l2BkHo3mS2lb0ndKoXKTaX957mfQ/pub?embedded=true"></iframe>
+        </div>
+    );
 }
 
-const DocViewer = () => {
-  // Path to your .docx file
-  const docxFile = 'https://docs.google.com/document/d/1TrCS5lf76w8HXRZNN3EaGsnQv9zV0GFUrBTGHMl5gZs/edit#heading=h.d2sja573mg05';
-
-  return (
-    <div>
-      <h1>Document Viewer</h1>
-      <Viewer
-        fileType="docx"
-        filePath={docxFile}
-        onError={e => console.log('Error:', e)}
-      />
-    </div>
-  );
-};
-
-export default DocViewer;
+export default App
 
 ReactDOM.render(
     <React.StrictMode>
-        <Titre/>
+        <App/>
     </React.StrictMode>,
     document.getElementById('root')
   );
